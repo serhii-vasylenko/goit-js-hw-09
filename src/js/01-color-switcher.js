@@ -23,6 +23,7 @@ function enableBodyRandomBgColor() {
 }
 
 function disableBodyRandomBgColor() {
+  document.body.style.backgroundColor = '#fafafa';
   clearInterval(timerId);
   refs.startBtn.disabled = false;
   refs.stopBtn.disabled = true;
