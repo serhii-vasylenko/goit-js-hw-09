@@ -62,18 +62,16 @@ function addLeadingZero(value) {
 }
 
 function enableTimer() {
-  // let count = 10;
+  refs.startBtn.disabled = true;
   timerId = setInterval(() => {
     const currentDate = Date.now();
     const msCount = date - currentDate;
-    
 
     const { days, hours, minutes, seconds } = convertMs(msCount);
     updateTimerValues({ days, hours, minutes, seconds });
 
     if (msCount < 0) {
       clearInterval(timerId);
-      refs.startBtn.disabled = true;
     }
   }, 1000);
 }
@@ -82,8 +80,18 @@ function updateTimerValues({ days, hours, minutes, seconds }) {
   if (seconds < 0) {
     return;
   }
-  refs.countDays.innerHTML = addLeadingZero(days);
-    refs.countHours.innerHTML = addLeadingZero(hours);
+
+  if (Number(refs.countMinutes.innerHTML) !== minutes) {
     refs.countMinutes.innerHTML = addLeadingZero(minutes);
-    refs.countSecondss.innerHTML = addLeadingZero(seconds);
+  }
+
+  if (Number(refs.countHours.innerHTML) !== hours) {
+    refs.countHours.innerHTML = addLeadingZero(hours);
+  }
+
+  if (Number(refs.countDays.innerHTML) !== days) {
+    refs.countDays.innerHTML = addLeadingZero(days);
+  }
+
+  refs.countSecondss.innerHTML = addLeadingZero(seconds);
 }

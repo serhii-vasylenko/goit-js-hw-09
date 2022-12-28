@@ -36,3 +36,34 @@ button[data-start]:disabled,
 button[data-stop]:disabled {
   background-color: #808080;
 }
+
+#datetime-picker {
+  padding: 3px;
+
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.timer {
+  display: flex;
+  gap: 10px;
+  padding-top: 30px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field span {
+  text-align: center;
+}
+
+span.value {
+  font-size: 40px;
+}
+
+span.label {
+  text-transform: uppercase;
+}
