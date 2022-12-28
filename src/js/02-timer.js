@@ -4,7 +4,6 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 const CURRENT_DATE = Number.parseInt(Date.now() / 60000);
 let date;
-let timerId;
 
 const refs = {
   startBtn: document.querySelector('[data-start]'),
@@ -67,7 +66,7 @@ function addLeadingZero(value) {
 
 function enableTimer() {
   refs.startBtn.disabled = true;
-  timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     const currentDate = Date.now();
     const msCount = date - currentDate;
 
