@@ -11,7 +11,8 @@ refs.formContainer.addEventListener('submit', event => {
   event.preventDefault();
   const { amount, delay, step } = event.target.elements;
 
-  let currentDelay = timeout = Number(delay.value);
+  let currentDelay = Number(delay.value);
+  let timeout = Number(delay.value);
   
   for (let i = 1; i <= amount.value; i++) {
     setTimeout(() => {      
