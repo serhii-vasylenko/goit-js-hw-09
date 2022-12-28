@@ -2,6 +2,10 @@ import flatpickr from 'flatpickr';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import 'flatpickr/dist/flatpickr.min.css';
 
+Notify.init({
+  rtl: true,
+});
+
 const CURRENT_DATE = Number.parseInt(Date.now() / 60000);
 let date;
 
@@ -19,9 +23,9 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  "locale": {
-    "firstDayOfWeek": 1
-},
+  locale: {
+    firstDayOfWeek: 1,
+  },
   onClose(selectedDates) {
     date = selectedDates[0].getTime();
     const isValid = isSelectedDateValid(date / 60000);

@@ -1,5 +1,10 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+Notify.init({
+  useIcon: false,
+  fontSize: '16px',
+});
+
 const refs = {
   formContainer: document.querySelector('.form'),
   delayInput: document.querySelector('[name="delay"]'),
