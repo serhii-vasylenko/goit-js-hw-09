@@ -23,7 +23,7 @@ const options = {
     date = selectedDates[0].getTime();
     const isValid = isSelectedDateValid(date / 60000);
     if (!isValid) {
-      Notify.failure('Please, select valid date!');
+      Notify.failure('Please choose a date in the future');
       return;
     }
     refs.startBtn.disabled = false;
