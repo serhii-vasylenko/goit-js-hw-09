@@ -19,6 +19,9 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  "locale": {
+    "firstDayOfWeek": 1
+},
   onClose(selectedDates) {
     date = selectedDates[0].getTime();
     const isValid = isSelectedDateValid(date / 60000);
