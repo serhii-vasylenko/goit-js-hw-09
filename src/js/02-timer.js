@@ -4,6 +4,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 const CURRENT_DATE = Number.parseInt(Date.now() / 60000);
 let date;
+let timerId;
 
 const refs = {
   startBtn: document.querySelector('[data-start]'),
